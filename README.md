@@ -54,4 +54,4 @@ Ele possui:
 
 Aqui estão seções detalhadas da implementação do envio de pedidos para o PayPal:
 
-- [Montagem da Requisição de pedido para o PayPal](./build-paypal.md)
+- [Montagem da Requisição de pedido para o PayPal](./docs/build-paypal.md)
