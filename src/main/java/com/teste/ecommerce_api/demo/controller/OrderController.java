@@ -29,7 +29,7 @@ public class OrderController {
     @PostMapping("/order/v2")
     public ResponseEntity<Map<String, String>> order(@RequestBody List<CartDto> cartsDto) throws JsonProcessingException {
 
-        log.info("Cards:"+ cartsDto);
+        log.info("Received request to send order to Paypal. Request body: {}", cartsDto);
 
         String msg = orderService.createOrder(cartsDto);
         String href = extractLastHref(msg);

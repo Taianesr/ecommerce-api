@@ -1,6 +1,7 @@
 package com.teste.ecommerce_api.demo.controller;
 
 import com.teste.ecommerce_api.demo.service.BucketService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -11,6 +12,7 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.IOException;
 
 @RestController
+@Slf4j
 public class BucketController {
 
     private final BucketService bucketService;
@@ -21,7 +23,8 @@ public class BucketController {
 
     @PostMapping("/uploadImage")
     public ResponseEntity<String> uploadImage(@RequestParam("file") MultipartFile file, @RequestParam String objectName) throws IOException {
-        bucketService.uploadImage(objectName, file);
+
+        log.info("Upload image request received. Object name: {}", objectName);
 
         try {
             bucketService.uploadImage(objectName, file);

@@ -26,6 +26,8 @@ public class CartController {
     @PostMapping("/cart/final-price")
     public ResponseEntity<FinalPriceDto> calculateFinalPrice(@RequestBody List<CartDto> cartDto) throws ParseException {
 
+        log.info("Received request to calculate cart final price. Request body: {}", cartDto);
+
         FinalPriceDto finalPriceDto = cartService.calculateCartTotal(cartDto);
 
 

@@ -22,6 +22,9 @@ public class ProductController {
 
     @PostMapping("/product")
     public ResponseEntity<String> saveProduct(@RequestBody ProductDto productDto) {
+
+        log.info("Received request to create a product. Request body: {}", productDto );
+
         try {
             productService.createProduct(productDto);
             return ResponseEntity.ok("Produto salvo com sucesso!");
@@ -34,6 +37,9 @@ public class ProductController {
 
     @GetMapping("/product")
     public ResponseEntity<?> getProduct(@RequestParam String sku) {
+
+        log.info("Received request to retrieve a product by sku: {}", sku);
+
         try {
            ProductFrontDto productDto= productService.getProductBySku(sku);
             return ResponseEntity.ok(productDto);
@@ -46,6 +52,9 @@ public class ProductController {
 
     @GetMapping("/allProducts")
     public ResponseEntity<?> getAllProduct() {
+
+        log.info("Received request to retrieve all products");
+
         try {
            List<ProductFrontDto> productsDto= productService.getAllProducts();
             return ResponseEntity.ok(productsDto);
@@ -58,6 +67,9 @@ public class ProductController {
 
     @PostMapping("/delete")
     public ResponseEntity<?> deleteBySku(@RequestParam String sku) {
+
+        log.info("Received request to delete a product by sku {}", sku);
+
         try {
             return (ResponseEntity<?>) productService.deleteProductBySku(sku);
         } catch (Exception e) {
