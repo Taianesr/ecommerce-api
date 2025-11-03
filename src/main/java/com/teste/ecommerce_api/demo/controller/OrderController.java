@@ -26,7 +26,7 @@ public class OrderController {
     }
 
 
-    @PostMapping("/order/v2")
+    @PostMapping("/order")
     public ResponseEntity<Map<String, String>> order(@RequestBody List<CartDto> cartsDto) throws JsonProcessingException {
 
         log.info("Received request to send order to Paypal. Request body: {}", cartsDto);

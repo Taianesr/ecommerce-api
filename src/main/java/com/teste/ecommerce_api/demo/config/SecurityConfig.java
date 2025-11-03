@@ -44,7 +44,7 @@ public class SecurityConfig {
                         .requestMatchers(HttpMethod.POST, "/product").permitAll()
                         .requestMatchers(HttpMethod.POST, "/cart/final-price").permitAll()
                         .requestMatchers(HttpMethod.POST, "/checkout").permitAll()
-                        .requestMatchers(HttpMethod.POST, "/order/v2").permitAll()
+                        .requestMatchers(HttpMethod.POST, "/order").permitAll()
                         .requestMatchers(HttpMethod.GET, "/getImage").permitAll()
                         .requestMatchers(HttpMethod.GET, "/product").permitAll()
                         .requestMatchers(HttpMethod.GET, "/allProducts").permitAll()

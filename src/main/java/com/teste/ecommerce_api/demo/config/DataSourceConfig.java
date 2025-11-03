@@ -19,7 +19,7 @@ public class DataSourceConfig {
 
     @Bean
     public DataSource dataSource() {
-        String url = getParameter("/ecommerce-db/url");
+        String url = getParameter("/ecommerce-api/db-aurora-url");
         String username = getParameter("/ecommerce-db/username");
         String password = getParameter("/ecommerce-db/password", true);
         String driver = getParameter("/ecommerce-db/driver-class-name");

@@ -4,6 +4,7 @@ import com.teste.ecommerce_api.demo.controller.dto.front.CartDto;
 import com.teste.ecommerce_api.demo.controller.dto.front.FinalPriceDto;
 import com.teste.ecommerce_api.demo.entity.ProductEntity;
 import com.teste.ecommerce_api.demo.repository.ProductRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
@@ -14,6 +15,7 @@ import java.util.List;
 import java.util.Locale;
 
 @Service
+@Slf4j
 public class CartService {
 
     private final ProductRepository productRepository;
@@ -35,6 +37,8 @@ public class CartService {
 
             totalPrice = totalPrice.add(unitPrice.multiply(quantity));
         }
+
+        log.info("Successfully calculated cart total: {}", totalPrice);
 
         return new FinalPriceDto(totalPrice);
 

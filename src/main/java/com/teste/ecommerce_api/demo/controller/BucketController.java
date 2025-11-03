@@ -26,21 +26,19 @@ public class BucketController {
 
         log.info("Upload image request received. Object name: {}", objectName);
 
-        try {
             bucketService.uploadImage(objectName, file);
+
             return ResponseEntity
                     .ok("Imagem enviada com sucesso: " + objectName);
-        } catch (IOException e) {
-            return ResponseEntity
-                    .status(HttpStatus.INTERNAL_SERVER_ERROR)
-                    .body("Erro ao enviar a imagem: " + e.getMessage());
-        }
 
     }
 
 
-    @GetMapping("/downloadImage")
-    public ResponseEntity<byte[]> downloadImage(@RequestParam("fileName") String fileName) throws IOException {
+    @GetMapping(value = "/getImage", produces = MediaType.IMAGE_JPEG_VALUE)
+    public ResponseEntity<byte[]> downloadImage(@RequestParam("fileName") String fileName) {
+
+        log.info("Download image request received. File name: {}", fileName);
+
         byte[] image = bucketService.downloadImage(fileName);
 
         return ResponseEntity.ok()

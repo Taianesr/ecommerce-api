@@ -35,6 +35,8 @@ public class OrderService {
 
         Map<ProductEntity, Integer> productQuantities = new HashMap<>();
 
+        log.info("Building PayPal request body from cart items...");
+
         for (CartDto cartDto : cartsDto) {
 
             ProductEntity product = productRepository.findBySku(cartDto.sku());
@@ -54,8 +56,6 @@ public class OrderService {
         PaypalDto paypal = orderFactory.buildPaypal();
         PurchaseUnitsDto purchaseUnit = orderFactory.buildPurchaseUnit(items, amount);
         OrderDto order = orderFactory.buildOrder(purchaseUnit, paypal);
-
-        log.info("" + order);
 
         return paypalOrderService.createOrderPaypal(
                 paypalAuthService.fetchPaypalAccessToken(), order, UUID.randomUUID().toString()

@@ -1,5 +1,6 @@
 package com.teste.ecommerce_api.demo.service;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 import software.amazon.awssdk.core.sync.RequestBody;
@@ -16,6 +17,7 @@ import java.io.IOException;
 import java.time.Duration;
 
 @Service
+@Slf4j
 public class BucketService {
 
     private final S3Client s3Client;
@@ -35,7 +37,6 @@ public class BucketService {
 
         String bucketName = getSsmParameter("/ecommerce/aws/s3-bucket-name");
 
-
         try {
             s3Client.putObject(
                     PutObjectRequest.builder()
@@ -44,6 +45,10 @@ public class BucketService {
                             .build(),
                     RequestBody.fromInputStream(file.getInputStream(), file.getSize())
             );
+
+            log.info("Successfully uploaded image '{}' to AWS S3 bucket '{}'", objectName, bucketName);
+
+
         } catch (IOException e) {
             throw new RuntimeException("Erro ao enviar arquivo para o S3", e);
         }
@@ -55,10 +60,14 @@ public class BucketService {
         String bucketName = getSsmParameter("/ecommerce/aws/s3-bucket-name");
 
 
-        return s3Client.getObject(GetObjectRequest.builder()
+        var response= s3Client.getObject(GetObjectRequest.builder()
                 .bucket(bucketName)
                 .key(fileName)
                 .build(), ResponseTransformer.toBytes()).asByteArray();
+
+        log.info("Successfully downloaded image '{}'", fileName);
+
+        return response;
 
     }
 
@@ -91,7 +100,6 @@ public class BucketService {
                 .parameter()
                 .value();
     }
-
 
 
 }
