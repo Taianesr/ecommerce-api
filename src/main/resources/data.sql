@@ -1,2 +1,2 @@
-INSERT IGNORE INTO tb_roles (role_id, name) VALUES (1, 'admin');
-INSERT IGNORE INTO tb_roles (role_id, name) VALUES (2, 'basic');
+INSERT IGNORE INTO defaultdb.tb_roles (name) VALUES ('admin');
+INSERT IGNORE INTO defaultdb.tb_roles (name) VALUES ('basic');

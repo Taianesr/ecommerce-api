@@ -25,6 +25,7 @@ public class AwsParameterCache {
         List<String> paths = List.of(
                 "/ecommerce-api/paypal",
                 "/ecommerce-db/",
+                "/ecommerce-api/db-aiven/",
                 "/ecommerce-api/db-aurora-url",
                 "/ecommerce-api/db-admin",
                 "/ecommerce/aws/"

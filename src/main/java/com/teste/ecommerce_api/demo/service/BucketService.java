@@ -38,7 +38,7 @@ public class BucketService {
         String bucketName = getSsmParameter("/ecommerce/aws/s3-bucket-name");
 
         try {
-            s3Client.putObject(
+           s3Client.putObject(
                     PutObjectRequest.builder()
                             .bucket(bucketName)
                             .key(objectName)

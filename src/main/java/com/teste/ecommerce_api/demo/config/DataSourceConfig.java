@@ -19,9 +19,9 @@ public class DataSourceConfig {
 
     @Bean
     public DataSource dataSource() {
-        String url = getParameter("/ecommerce-api/db-aurora-url");
-        String username = getParameter("/ecommerce-db/username");
-        String password = getParameter("/ecommerce-db/password", true);
+        String url = getParameter("/ecommerce-api/db-aiven/url");
+        String username = getParameter("/ecommerce-api/db-aiven/user");
+        String password = getParameter("/ecommerce-api/db-aiven/password", true);
         String driver = getParameter("/ecommerce-db/driver-class-name");
 
         HikariDataSource ds = new HikariDataSource();
