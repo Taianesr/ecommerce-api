@@ -1,6 +1,8 @@
-# E-commerce de Maquiagens 💄
+✨ GlossyHive – E-commerce de Maquiagens 💄
 
-Este projeto é um e-commerce de maquiagens desenvolvido para **simular o processo de pagamento utilizando o sandbox do PayPal**.
+Este projeto é um e-commerce de maquiagens chamado GlossyHive, desenvolvido para simular o processo de pagamento utilizando o ambiente Sandbox do PayPal.
+
+🌐 Acesse o site: https://www.glossyhive.com
 
 Ele possui:
 - **Front-end** em React + JavaScript
@@ -9,18 +11,14 @@ Ele possui:
 
 ---
 
-## 🛍️ Funcionalidades
+  Principais funcionalidades
 
-- Exibição de produtos com:
-    - Foto
-    - Nome
-    - Descrição
-    - Valor
-- Carrinho de compras
-- Cálculo do valor total
-- Finalização de pagamento via **PayPal Sandbox**
-
----
+✔️ Catálogo de produtos com imagens, preço e categorias
+✔️ Carrinho de compras dinâmico (adicionar, remover, alterar quantidade)
+✔️ Persistência dos produtos e pedidos no backend
+✔️ Fluxo real de pagamento usando PayPal REST API (Sandbox)
+✔️ Deploy integrado com Amazon S3 + CloudFront (CDN)
+✔️ Suporte a CORS para comunicação entre front e back
 
 ## 🧰 Tecnologias Utilizadas
 
@@ -33,6 +31,14 @@ Ele possui:
 - Java
 - Spring Boot
 - REST API
+
+### Deploy / Infraestrutura:
+
+Hospedado no AWS S3 (Front)
+
+Distribuído via CloudFront (CDN)
+
+API hospedada em EC2 / Elastic Beanstalk (dependendo da etapa do desenvolvimento)
 
 ### Pagamentos:
 - PayPal Sandbox (REST API)
