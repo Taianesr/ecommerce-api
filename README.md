@@ -39,8 +39,6 @@ Este projeto é um e-commerce de maquiagens chamado GlossyHive, desenvolvido par
 ---
 
 
----
-
 ## 🔄 Fluxo do Pagamento com PayPal
 
 1. O usuário adiciona produtos ao carrinho.
