@@ -1,7 +1,6 @@
 package com.teste.ecommerce_api.demo.mapper;
 
 import com.teste.ecommerce_api.demo.controller.dto.front.ProductFrontDto;
-import com.teste.ecommerce_api.demo.controller.dto.paypal.ItemsDto;
 import com.teste.ecommerce_api.demo.controller.dto.product.ProductDto;
 import com.teste.ecommerce_api.demo.controller.dto.product.UnitAmountProductDto;
 import com.teste.ecommerce_api.demo.controller.dto.product.UpcProductDto;
