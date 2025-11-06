@@ -4,44 +4,37 @@ Este projeto é um e-commerce de maquiagens chamado GlossyHive, desenvolvido par
 
 🌐 Acesse o site: https://www.glossyhive.com
 
-Ele possui:
-- **Front-end** em React + JavaScript
-- **Back-end** em Java + Spring Boot
-- Integração com a **API REST do PayPal**
+## ✨ Principais Funcionalidades
+
+- Catálogo de produtos com imagens, preços e categorias
+- Carrinho de compras dinâmico (adicionar, remover e alterar quantidade de itens)
+- Persistência dos produtos e pedidos no backend
+- Fluxo real de pagamento utilizando a PayPal REST API (Sandbox)
+- Deploy do frontend na AWS (S3 integrado ao CloudFront)
+- Suporte a CORS para comunicação entre frontend e backend
 
 ---
 
-  Principais funcionalidades
-
-✔️ Catálogo de produtos com imagens, preço e categorias
-✔️ Carrinho de compras dinâmico (adicionar, remover, alterar quantidade)
-✔️ Persistência dos produtos e pedidos no backend
-✔️ Fluxo real de pagamento usando PayPal REST API (Sandbox)
-✔️ Deploy integrado com Amazon S3 + CloudFront (CDN)
-✔️ Suporte a CORS para comunicação entre front e back
-
 ## 🧰 Tecnologias Utilizadas
 
-### Front-end:
-- React
+### Frontend
+- React (Vite)
 - JavaScript
 - HTML / CSS
+- Axios
 
-### Back-end:
-- Java
+### Backend
+- Java 21
 - Spring Boot
 - REST API
 
-### Deploy / Infraestrutura:
+### Deploy / Infraestrutura
+- AWS S3 (hospedagem do frontend)
+- CloudFront (CDN para distribuição)
+- EC2 / Elastic Beanstalk (hospedagem da API)
 
-Hospedado no AWS S3 (Front)
-
-Distribuído via CloudFront (CDN)
-
-API hospedada em EC2 / Elastic Beanstalk (dependendo da etapa do desenvolvimento)
-
-### Pagamentos:
-- PayPal Sandbox (REST API)
+### Pagamentos
+- PayPal REST API (Sandbox)
 
 ---
 
