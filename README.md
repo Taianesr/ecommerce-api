@@ -8,7 +8,7 @@ Este projeto é um e-commerce de maquiagens chamado GlossyHive, desenvolvido par
 
 - Catálogo de produtos com imagens, preços e categorias
 - Carrinho de compras dinâmico (adicionar, remover e alterar quantidade de itens)
-- Persistência dos produtos e pedidos no backend
+- Persistência dos produtos.
 - Fluxo real de pagamento utilizando a PayPal REST API (Sandbox)
 - Deploy do frontend na AWS (S3 integrado ao CloudFront)
 - Suporte a CORS para comunicação entre frontend e backend
@@ -31,7 +31,7 @@ Este projeto é um e-commerce de maquiagens chamado GlossyHive, desenvolvido par
 ### Deploy / Infraestrutura
 - AWS S3 (hospedagem do frontend)
 - CloudFront (CDN para distribuição)
-- EC2 / Elastic Beanstalk (hospedagem da API)
+- EC2 (hospedagem da API)
 
 ### Pagamentos
 - PayPal REST API (Sandbox)
